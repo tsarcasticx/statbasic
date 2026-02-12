@@ -6,17 +6,17 @@ void diff(float *before, float *after, int len){
     printf("%f ",*(after + i) - *(before + i) );
  } printf("\n");
 }
-void sort(float data[], int len){
+void sort(int data[], int len){
   for (int i = 0; i < len; i++) {
-    for (int j = 0; i < (len - 1); j++) {
+    for (int j = 0; j < (len - 1); j++) {
       if (data[j] > data[j + 1]) {
-        float swap = data[j];
+        int swap = data[j];
         data[j] = data[j + 1];
         data[j + 1] = swap;
       }
     }
   }
-};
+}
 float sum (float *data, int len){
   float counter = 0;
   for (int i = 0; i < len; i++) {
