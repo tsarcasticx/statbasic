@@ -1,6 +1,7 @@
 #ifndef STATBASIC_H
 #define STATBASIC_H
 
+void printa(float *data, int len);
 void diff(float *before, float *after, int len);
 void sort(int data[], int len);
 float sum(float *data, int len);
