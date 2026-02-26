@@ -35,15 +35,28 @@ float sum (float *data, int len){
 float zScore(float data, float mean, float var) {
   return (data - mean)/sqrt(var);
 }
-float dataSquare(float *data, int len){
-  float counter = 0;
+float sumOfSquares(float *data, int len){
+  float dataSquare = 0;
+  float sum = 0;
   for (int i = 0; i < len; i++) {
-    counter += pow(*(data + i), 2);
+    dataSquare += pow(*(data + i), 2);
+    sum += *(data + i);
   }
-  return counter;
+  return (dataSquare) - (pow(sum, 2)/len);
 }
-float sumOfDegrees(float ySquare, float sum, int len){
-  return (ySquare) - (pow(sum, 2)/len);
+float sumOfCrossProduct(float dataX[], float dataY[], int len){
+  float dataSquares, sumX, sumY;
+  dataSquares = 0;
+  sumX = 0;
+  sumY = 0;
+  for (int i = 0; i < len; i++) {
+    dataSquares += (dataX[i] * dataY[i]);
+    sumX += dataX[i];
+    sumY += dataY[i];
+  }
+  return (dataSquares) - ((sumX * sumY)/len);
+
+  return 1;
 }
 float tStat(float mean, float sd) {
   return (mean) /(sd/sqrt(10));
