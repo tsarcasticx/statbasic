@@ -55,8 +55,6 @@ float sumOfCrossProduct(float dataX[], float dataY[], int len){
     sumY += dataY[i];
   }
   return (dataSquares) - ((sumX * sumY)/len);
-
-  return 1;
 }
 float tStat(float mean, float sd) {
   return (mean) /(sd/sqrt(10));
